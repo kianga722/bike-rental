@@ -122,7 +122,7 @@ function App() {
 
           <Link
             className='homeLink'
-            to='/'
+            to='/bike-rental'
           >
             Home
           </Link>
@@ -145,7 +145,9 @@ function App() {
 
         </section>
 
-        <Route exact path='/' render={() =>
+        <Redirect from="/" to="/bike-rental" />
+
+        <Route path='/bike-rental' render={() =>
           <Home
             products={products}
             numOptions={numOptions}
@@ -157,7 +159,7 @@ function App() {
             handleCloseProductSelect={handleCloseProductSelect}
           />
         } />
-          
+
         <Route path='/cart' render={() =>
           <Cart
             numOptions={numOptions}
